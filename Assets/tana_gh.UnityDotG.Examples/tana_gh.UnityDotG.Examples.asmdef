@@ -1,0 +1,18 @@
+{
+    "name": "tana_gh.UnityDotG.Examples",
+    "rootNamespace": "tana_gh.UnityDotG.Examples",
+    "references": [
+        "GUID:87a63afd14a0a684c8192fa0151a9594"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
