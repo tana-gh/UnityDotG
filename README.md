@@ -7,7 +7,7 @@ Auto-generate C# code for Unity project.
 Add this package from following URL.
 
 ```
-https://github.com/tana-gh/UnityDotG.git?path=/Assets/com.tana_gh.UnityDotG
+https://github.com/tana-gh/UnityDotG.git?path=/Assets/UnityDotG
 ```
 
 ## Notice
