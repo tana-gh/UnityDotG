@@ -1,5 +1,5 @@
 {
-  "name": "com.tana_gh.UnityDotG",
+  "name": "com.tana_gh.unity-dot-g",
   "version": "1.0.0",
   "displayName": "UnityDotG",
   "description": "Auto-generate C# code for Unity project",
