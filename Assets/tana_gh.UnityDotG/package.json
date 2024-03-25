@@ -1,0 +1,20 @@
+{
+  "name": "com.tana_gh.UnityDotG",
+  "version": "1.0.0",
+  "displayName": "UnityDotG",
+  "description": "Auto-generate C# code for Unity project",
+  "unity": "2022.3",
+  "unityRelease": "22f1",
+  "documentationUrl": "https://github.com/tana-gh/UnityDotG",
+  "changelogUrl": "https://github.com/tana-gh/UnityDotG/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/tana-gh/UnityDotG/blob/main/LICENSE",
+  "dependencies": {},
+  "keywords": [
+    "source generation",
+    "code generation"
+  ],
+  "author": {
+    "name": "tana-gh",
+    "url": "https://github.com/tana-gh"
+  }
+}
