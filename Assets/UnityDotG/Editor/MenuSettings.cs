@@ -4,11 +4,6 @@ namespace tana_gh.UnityDotG.Editor
 {
     internal static class MenuSettings
     {
-        static MenuSettings()
-        {
-            Menu.SetChecked(MenuPathOfGenerateOnCompile, UnityDotGSettings.GenerateOnCompile);
-        }
-
         private const string MenuPathOfGenerateCode = "Tools/UnityDotG/Generate Code";
 
         [MenuItem(MenuPathOfGenerateCode)]
@@ -22,8 +17,15 @@ namespace tana_gh.UnityDotG.Editor
         [MenuItem(MenuPathOfGenerateOnCompile)]
         private static void GenerateOnCompile()
         {
+            UnityDotGSettings.GenerateOnCompile = !Menu.GetChecked(MenuPathOfGenerateOnCompile);
             Menu.SetChecked(MenuPathOfGenerateOnCompile, UnityDotGSettings.GenerateOnCompile);
-            UnityDotGSettings.GenerateOnCompile = Menu.GetChecked(MenuPathOfGenerateOnCompile);
+        }
+
+        [MenuItem(MenuPathOfGenerateOnCompile, validate = true)]
+        private static bool ValidateGenerateOnCompile()
+        {
+            Menu.SetChecked(MenuPathOfGenerateOnCompile, UnityDotGSettings.GenerateOnCompile);
+            return true;
         }
     }
 }
