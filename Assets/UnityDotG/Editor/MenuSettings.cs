@@ -6,18 +6,28 @@ namespace tana_gh.UnityDotG.Editor
     {
         private const string MenuPathOfGenerateCode = "Tools/UnityDotG/Generate Code";
 
-        [MenuItem(MenuPathOfGenerateCode)]
+        [MenuItem(MenuPathOfGenerateCode, priority = 1)]
         private static void GenerateCode()
         {
+            UnityDotGSettings.GenerateRunning = true;
             CodeGen.GenerateAllFiles();
+        }
+
+        private const string MenuPathOfEraseAndGenerateCode = "Tools/UnityDotG/Erase and Generate Code";
+
+        [MenuItem(MenuPathOfEraseAndGenerateCode, priority = 2)]
+        private static void EraseAndGenerateCode()
+        {
+            UnityDotGSettings.GenerateRunning = false;
+            CodeGen.EraseAllFileContents();
         }
 
         private const string MenuPathOfGenerateOnCompile = "Tools/UnityDotG/Generate on Compile";
 
-        [MenuItem(MenuPathOfGenerateOnCompile)]
+        [MenuItem(MenuPathOfGenerateOnCompile, priority = 3)]
         private static void GenerateOnCompile()
         {
-            UnityDotGSettings.GenerateOnCompile = !Menu.GetChecked(MenuPathOfGenerateOnCompile);
+            UnityDotGSettings.GenerateOnCompile = Menu.GetChecked(MenuPathOfGenerateOnCompile);
             Menu.SetChecked(MenuPathOfGenerateOnCompile, UnityDotGSettings.GenerateOnCompile);
         }
 
