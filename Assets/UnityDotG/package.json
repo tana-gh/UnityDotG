@@ -1,6 +1,6 @@
 {
   "name": "com.tana_gh.unity_dot_g",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "displayName": "UnityDotG",
   "description": "Auto-generate C# code for Unity project",
   "unity": "2022.3",
