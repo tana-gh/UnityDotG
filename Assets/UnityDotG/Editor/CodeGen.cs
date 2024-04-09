@@ -13,21 +13,9 @@ namespace tana_gh.UnityDotG.Editor
         [InitializeOnLoadMethod]
         private static void Initialize()
         {
-            if (UnityDotGSettings.GenerateRunning)
+            if (UnityDotGSettings.GenerateOnCompile)
             {
-                UnityDotGSettings.GenerateRunning = false;
-            }
-            else if (UnityDotGSettings.GenerateOnCompile)
-            {
-                UnityDotGSettings.GenerateRunning = true;
-                try
-                {
-                    GenerateAllFiles();
-                }
-                catch
-                {
-                    UnityDotGSettings.GenerateRunning = false;
-                }
+                GenerateAllFiles();
             }
         }
 

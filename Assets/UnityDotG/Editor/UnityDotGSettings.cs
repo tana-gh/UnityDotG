@@ -12,14 +12,6 @@ namespace tana_gh.UnityDotG.Editor
             set => SetBoolConfigValue(configNameOfGenerateOnCompile, value);
         }
 
-        internal const string configNameOfGenerateRunning = "tana_gh.UnityDotG.GenerateRunning";
-
-        public static bool GenerateRunning
-        {
-            get => GetBoolConfigValue(configNameOfGenerateRunning, false);
-            set => SetBoolConfigValue(configNameOfGenerateRunning, value);
-        }
-
         private static bool GetBoolConfigValue(string configName, bool defaultValue)
         {
             if (bool.TryParse(EditorUserSettings.GetConfigValue(configName), out var value))
