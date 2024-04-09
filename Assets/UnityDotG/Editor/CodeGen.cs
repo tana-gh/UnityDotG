@@ -99,7 +99,7 @@ namespace tana_gh.UnityDotG.Editor
 
         private static void WriteAllContexts(IEnumerable<CodeGenContext> contexts)
         {
-            WriteAllFiles(contexts.SelectMany(ctx => ctx.pathAndContents), true);
+            WriteAllFiles(contexts.SelectMany(ctx => ctx.PathAndContents), true);
         }
 
         private static void WriteAllFiles(IEnumerable<(string path, string content)> pathAndContents, bool addToScriptableObject)
