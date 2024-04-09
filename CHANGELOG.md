@@ -1,3 +1,7 @@
+# v1.1.2
+
+Fix a bug that generation not running.
+
 # v1.1.1
 
 Fix bugs of CodeGenScriptableObject.

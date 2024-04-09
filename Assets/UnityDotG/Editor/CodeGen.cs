@@ -13,21 +13,9 @@ namespace tana_gh.UnityDotG.Editor
         [InitializeOnLoadMethod]
         private static void Initialize()
         {
-            if (UnityDotGSettings.GenerateRunning)
+            if (UnityDotGSettings.GenerateOnCompile)
             {
-                UnityDotGSettings.GenerateRunning = false;
-            }
-            else if (UnityDotGSettings.GenerateOnCompile)
-            {
-                UnityDotGSettings.GenerateRunning = true;
-                try
-                {
-                    GenerateAllFiles();
-                }
-                catch
-                {
-                    UnityDotGSettings.GenerateRunning = false;
-                }
+                GenerateAllFiles();
             }
         }
 
@@ -99,7 +87,7 @@ namespace tana_gh.UnityDotG.Editor
 
         private static void WriteAllContexts(IEnumerable<CodeGenContext> contexts)
         {
-            WriteAllFiles(contexts.SelectMany(ctx => ctx.pathAndContents), true);
+            WriteAllFiles(contexts.SelectMany(ctx => ctx.PathAndContents), true);
         }
 
         private static void WriteAllFiles(IEnumerable<(string path, string content)> pathAndContents, bool addToScriptableObject)

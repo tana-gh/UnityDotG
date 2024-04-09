@@ -9,7 +9,6 @@ namespace tana_gh.UnityDotG.Editor
         [MenuItem(MenuPathOfGenerateCode, priority = 1)]
         private static void GenerateCode()
         {
-            UnityDotGSettings.GenerateRunning = true;
             CodeGen.GenerateAllFiles();
         }
 
@@ -18,7 +17,6 @@ namespace tana_gh.UnityDotG.Editor
         [MenuItem(MenuPathOfEraseAndGenerateCode, priority = 2)]
         private static void EraseAndGenerateCode()
         {
-            UnityDotGSettings.GenerateRunning = false;
             CodeGen.EraseAllFileContents();
         }
 
