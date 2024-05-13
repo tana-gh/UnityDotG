@@ -11,7 +11,7 @@ namespace tana_gh.UnityDotG.Editor
     {
         public List<string> filePaths = new();
 
-        public static string DefaultPath { get; } = "Assets/UnityDotG/CodeGenScriptableObject.asset";
+        public static string DefaultPath { get; } = "Assets/UnityDotGSettings/CodeGenScriptableObject.asset";
 
         internal static void ClearFilePaths()
         {
