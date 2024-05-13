@@ -1,3 +1,7 @@
+# v1.1.3
+
+Fix bugs of CodeGenScriptableObject.asset path.
+
 # v1.1.2
 
 Fix a bug that generation not running.
