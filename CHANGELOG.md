@@ -1,3 +1,7 @@
+# v1.1.4
+
+Fix bugs that CodeGenScriptableObject.asset broken.
+
 # v1.1.3
 
 Fix bugs of CodeGenScriptableObject.asset path.
