@@ -21,7 +21,6 @@ namespace tana_gh.UnityDotG.Editor
 
         internal static void GenerateAllFiles()
         {
-            CodeGenScriptableObject.ClearFilePaths();
             var contexts = GenerateAll();
             WriteAllContexts(contexts);
         }
@@ -96,6 +95,7 @@ namespace tana_gh.UnityDotG.Editor
             {
                 WriteFile(path, content, addToScriptableObject);
             }
+            CodeGenScriptableObject.Apply();
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
         }

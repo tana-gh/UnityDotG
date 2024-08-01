@@ -1,3 +1,7 @@
+# v1.1.5
+
+Fix bugs that modification time of CodeGenScriptableObject.asset broken.
+
 # v1.1.4
 
 Fix bugs that CodeGenScriptableObject.asset broken.
