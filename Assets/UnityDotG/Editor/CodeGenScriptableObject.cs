@@ -10,17 +10,28 @@ namespace tana_gh.UnityDotG.Editor
     public class CodeGenScriptableObject : ScriptableObject
     {
         public List<string> filePaths = new();
+        private readonly List<string> tmpFilePaths = new();
 
         public static string DefaultPath { get; } = "Assets/UnityDotGSettings/CodeGenScriptableObject.asset";
 
-        internal static void ClearFilePaths()
-        {
-            Effect(asset => asset.filePaths.Clear());
-        }
-
         internal static void AddFilePath(string path)
         {
-            Effect(asset => asset.filePaths.Add(path));
+            Effect(asset => asset.tmpFilePaths.Add(path));
+        }
+
+        internal static void Apply()
+        {
+            Effect(asset =>
+            {
+                asset.tmpFilePaths.Sort();
+                if (!asset.filePaths.SequenceEqual(asset.tmpFilePaths))
+                {
+                    asset.filePaths.Clear();
+                    asset.filePaths.AddRange(asset.tmpFilePaths);
+                    EditorUtility.SetDirty(asset);
+                }
+                asset.tmpFilePaths.Clear();
+            });
         }
 
         internal static IEnumerable<string> GetFilePaths()
@@ -36,7 +47,6 @@ namespace tana_gh.UnityDotG.Editor
                 asset = CreateAsset();
             }
             effect(asset);
-            EditorUtility.SetDirty(asset);
         }
 
         private static T Get<T>(Func<CodeGenScriptableObject, T> get)
