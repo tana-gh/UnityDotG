@@ -95,7 +95,12 @@ namespace tana_gh.UnityDotG.Editor
             {
                 WriteFile(path, content, addToScriptableObject);
             }
-            CodeGenScriptableObject.Apply();
+
+            if (addToScriptableObject)
+            {
+                CodeGenScriptableObject.Apply();
+            }
+            
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
         }

@@ -73,6 +73,7 @@ namespace tana_gh.UnityDotG.Editor
             var asset = CreateInstance<CodeGenScriptableObject>();
             Directory.CreateDirectory(Path.GetDirectoryName(DefaultPath));
             AssetDatabase.CreateAsset(asset, DefaultPath);
+            AssetDatabase.ImportAsset(DefaultPath);
             return asset;
         }
     }
