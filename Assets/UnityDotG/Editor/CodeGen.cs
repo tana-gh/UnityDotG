@@ -96,8 +96,8 @@ namespace tana_gh.UnityDotG.Editor
             {
                 WriteFile(path, content, addToScriptableObject);
             }
-            AssetDatabase.Refresh();
             AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
 
         private static void WriteFile(string path, string content, bool addToScriptableObject)
@@ -121,6 +121,7 @@ namespace tana_gh.UnityDotG.Editor
 
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             File.WriteAllText(path, generatedContent, Encoding.UTF8);
+            AssetDatabase.ImportAsset(path);
         }
     }
 }
