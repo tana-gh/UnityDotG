@@ -33,9 +33,7 @@ namespace tana_gh.UnityDotG.Editor
             var asset = FindAsset();
             if (asset == null)
             {
-                asset = CreateInstance<CodeGenScriptableObject>();
-                Directory.CreateDirectory(Path.GetDirectoryName(DefaultPath));
-                AssetDatabase.CreateAsset(asset, DefaultPath);
+                asset = CreateAsset();
             }
             effect(asset);
             EditorUtility.SetDirty(asset);
@@ -58,6 +56,14 @@ namespace tana_gh.UnityDotG.Editor
                 .Select(guid => AssetDatabase.GUIDToAssetPath(guid))
                 .FirstOrDefault();
             return assetPath == null ? null : AssetDatabase.LoadAssetAtPath<CodeGenScriptableObject>(assetPath);
+        }
+
+        private static CodeGenScriptableObject CreateAsset()
+        {
+            var asset = CreateInstance<CodeGenScriptableObject>();
+            Directory.CreateDirectory(Path.GetDirectoryName(DefaultPath));
+            AssetDatabase.CreateAsset(asset, DefaultPath);
+            return asset;
         }
     }
 }
