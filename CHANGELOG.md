@@ -1,3 +1,7 @@
+# v1.1.6
+
+Fix bugs that modification CodeGenScriptableObject.asset broken when `Erase and Generate Code`.
+
 # v1.1.5
 
 Fix bugs that modification time of CodeGenScriptableObject.asset broken.
